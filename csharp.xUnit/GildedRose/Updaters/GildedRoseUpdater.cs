@@ -8,14 +8,14 @@ namespace GildedRoseKata.Updaters
 {
     public abstract class GildedRoseUpdater
     {
-        readonly Item Item;
+        protected readonly Item _Item;
 
         const int MaxQuality = 50;
         const int MinQuality = 0;
 
         protected GildedRoseUpdater(Item item)
         {
-            Item = item;
+            _Item = item;
         }
 
         public virtual void Update()
@@ -27,27 +27,27 @@ namespace GildedRoseKata.Updaters
 
         protected virtual void UpdateSellIn()
         {
-            Item.SellIn--;
+            _Item.SellIn--;
         }
 
         protected abstract void UpdateQuality();
 
         protected virtual void AfterUpdate()
         {
-            if (Item.Quality < MinQuality)
-                Item.Quality = MinQuality;
-            if (Item.Quality > MaxQuality)
-                Item.Quality = MaxQuality;
+            if (_Item.Quality < MinQuality)
+                _Item.Quality = MinQuality;
+            if (_Item.Quality > MaxQuality)
+                _Item.Quality = MaxQuality;
         }
 
         protected void DecreaseQuality(int amount = 1)
         {
-            Item.Quality -= amount;
+            _Item.Quality -= amount;
         }
 
         protected void IncreaseQuality(int amount = 1)
         {
-            Item.Quality += amount;
+            _Item.Quality += amount;
         }
     }
 }
