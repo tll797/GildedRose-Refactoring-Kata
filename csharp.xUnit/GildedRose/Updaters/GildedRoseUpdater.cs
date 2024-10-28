@@ -25,6 +25,7 @@ namespace GildedRoseKata.Updaters
             AfterUpdate();
         }
 
+
         protected virtual void UpdateSellIn()
         {
             _Item.SellIn--;
@@ -32,6 +33,10 @@ namespace GildedRoseKata.Updaters
 
         protected abstract void UpdateQuality();
 
+
+        /// <summary>
+        /// Get rid off value if goes out of bounds of min and max
+        /// </summary>
         protected virtual void AfterUpdate()
         {
             if (_Item.Quality < MinQuality)

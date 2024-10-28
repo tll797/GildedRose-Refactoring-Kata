@@ -33,8 +33,7 @@ public class Program
                 Name = "Backstage passes to a TAFKAL80ETC concert",
                 SellIn = 5,
                 Quality = 49
-            },
-            // this conjured item does not work properly yet
+            }, 
             new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
         };
 

@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace GildedRoseKata.Updaters
 {
-    class GenericItemUpdater : GildedRoseUpdater
+    public  class GenericItemUpdater : GildedRoseUpdater
     {
+        /// <summary>
+        /// Update items with names that match no case defintions
+        /// </summary>
+        /// <param name="item">item to update</param>
         public GenericItemUpdater(Item item) : base(item) { }
 
         protected override void UpdateQuality()
